@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>To My Problem ❤️</title>
+<title>Love ❤️</title>
 
 <style>
 
@@ -28,7 +28,8 @@ text-shadow:0 0 30px pink;
 font-size:32px;
 white-space:pre-line;
 display:none;
-opacity:1;
+opacity:0;
+animation:fadeIn 2s forwards;
 text-shadow:0 0 15px #ff4da6;
 }
 
@@ -49,6 +50,11 @@ animation:float 6s linear forwards;
 100%{transform:translateY(-10vh) scale(1.5);opacity:0;}
 }
 
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
 </style>
 </head>
 
@@ -63,27 +69,26 @@ animation:float 6s linear forwards;
 </div>
 
 <audio id="bgm" loop>
-<source src="https://www.youtube.com/embed/GxldQ9eX2wo">
+<source src="https://www.youtube.com/embed/CvFH_6DNRCY">
 </audio>
 
 <script>
 
-const textContent = `Title = To My Problem ❤️
+const textContent =  To My Love ❤️
 
-ဟေ့ မင်္ဂလာညနေခင်းပါ ကိုယ့်ရဲ့ မရှိမဖြစ်လေးရယ်.......
+ဟေ့ မင်္ဂလာညနေခင်းပါ ကိုယ့်ရဲ့ မရှိမဖြစ်လေးရယ်...
 
-ခုတလော အဆင်မပြေမူတွေ ကြောင့် တောင်းပန်ပါတယ်နော....
+ခုတလော အဆင်မပြေတာတွေရှိခဲ့ရင် တောင်းပန်ပါတယ်နော်။
 
-ကိုယ့်မှာမင်းပဲ ရှိတာမို့ တစ်ခါတလေ အစိုးရိမ်လွန် အတွေးလွန်ပြီး
-ပြောမှားဆိုမှားတာတွေရှိရင် နားလည်ပေးပါ ❤️`;
+ကိုယ့်မှာမင်းပဲ ရှိတာမို့
+အတွေးလွန် စိုးရိမ်လွန်တာတွေရှိရင် နားလည်ပေးပါ ❤️`;
 
-window.onload=startCountdown;
+window.onload=startSequence;
 
-function startCountdown(){
+function startSequence(){
 
 let count=3;
 let cd=document.getElementById("countdown");
-let msg=document.getElementById("message");
 
 let timer=setInterval(()=>{
 
@@ -100,7 +105,7 @@ setInterval(createHeart,120);
 
 setTimeout(()=>{
 document.getElementById("bgm").play().catch(()=>{});
-},500);
+},800);
 
 }else{
 count--;
@@ -127,12 +132,12 @@ setTimeout(typing,40);
 
 setTimeout(()=>{
 msg.style.opacity="0";
-},2000);
+},2500);
 
 setTimeout(()=>{
 msg.style.display="none";
 document.getElementById("closeScene").style.display="block";
-},4000);
+},4500);
 
 }
 }
@@ -154,61 +159,7 @@ document.body.appendChild(heart);
 
 setTimeout(()=>heart.remove(),6000);
 }
-<style>
 
-.heart{
-position:absolute;
-pointer-events:none;
-animation:float 6s linear forwards;
-}
-
-@keyframes float{
-0%{
-transform:translateY(100vh) scale(0.5);
-opacity:1;
-}
-100%{
-transform:translateY(-10vh) scale(1.5);
-opacity:0;
-}
-}
-
-</style>
-
-<body>
-
-<audio id="bgm" loop>
-<source src="https://www.youtube.com/embed/CvFH_6DNRCY" type="audio/mp3">
-</audio>
-
-<script>
-
-setInterval(createHeart,120);
-
-function createHeart(){
-
-let heart=document.createElement("div");
-heart.className="heart";
-heart.innerHTML="💖";
-
-heart.style.left=Math.random()*100+"vw";
-heart.style.top="100vh";
-heart.style.fontSize=(15+Math.random()*30)+"px";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>heart.remove(),6000);
-}
-
-window.onload=()=>{
-startCountdown();
-
-setTimeout(()=>{
-document.getElementById("bgm").play().catch(()=>{});
-},800);
-};
-
-</script>
 </script>
 
 </body>
